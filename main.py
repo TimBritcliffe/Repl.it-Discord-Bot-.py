@@ -8,8 +8,24 @@ import json
 from random import choice
 
 
-#The Start Of The Keep Alive Code
-from keep_alive import keep_alive
+#The Keep Alive Code
+from flask import Flask
+from threading import Thread
+
+app = Flask('')
+
+@app.route('/')
+def main():
+  return "Hello World"
+
+def run():
+  app.run(host="0.0.0.0", port=8000)
+
+def keep_alive():
+  server = Thread(target=run)
+  server.start()
+
+	
 
 #Set Prefix
 client = commands.Bot(command_prefix="-",
