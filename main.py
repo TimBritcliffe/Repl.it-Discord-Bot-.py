@@ -177,5 +177,11 @@ async def die(ctx):
 
 
 #This Consists of Your Bot's Token As Well As The End Of The Keep Alive Code
+
+
 keep_alive()
-client.run(os.getenv('TOKEN')) #You can choose to add your Token here as long as this file remains private. If you are using something like Repl.it, please refer to the "hidden_token" folder
+client.run(os.getenv('TOKEN')) #If you are using a private host for this, you can replace "TOKEN" with your bot's actual token. 
+#If you are using Repl.it, create a new "Secrets (Environment Variable)" that holds your Discord bot's token, name this variable "TOKEN"
+
+
+
