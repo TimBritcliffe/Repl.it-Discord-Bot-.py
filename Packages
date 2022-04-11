@@ -1,0 +1,3 @@
+You don't need to add this to the bot, but make sure that "Flask" and "discord" are installed 
+
+Package files that need to be installed are "poetry.lock" and "pyproject.toml"
