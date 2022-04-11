@@ -178,4 +178,4 @@ async def die(ctx):
 
 #This Consists of Your Bot's Token As Well As The End Of The Keep Alive Code
 keep_alive()
-client.run(os.getenv('TOKEN'))
+client.run(os.getenv('TOKEN')) #You can choose to add your Token here as long as this file remains private. If you are using something like Repl.it, please reefer to the "hidden_token" folder
