@@ -1,16 +1,22 @@
-#The code which will keep the bot alive
-from flask import Flask
-from threading import Thread
+#Keep Alive Background Task 
 
-app = Flask('')
+status = cycle(['with Python','JetHub'])
 
-@app.route('/')
-def home():
-    return 'Hello World'
+@bot.event
+async def on_ready():
+  change_status.start()
+  print("Hello World")
 
-def run():
-  app.run(host='0.0.0.0',port=8080)
+@tasks.loop(seconds=10)
+async def change_status():
+  await bot.change_presence(activity=discord.Game(next(status)))
 
-def keep_alive():
-    t = Thread(target=run)
-    t.start()
+
+#UptimeRobot Setup (remove this and anything under this after completing) 
+Create an account on https://uptimerobot.com 
+After making an account, create a "new monitor" 
+Select "http(s)" for the monitor type
+Go to to your project on repl.it and copy the url from the top of the console and paste it in url section of the monitor
+Set the monitoring interval to every 5 mins (so that it will ping the bot every 5 mins) and click on create monitor twice
+
+Now that you have done this, here's a reminder to delete this part
